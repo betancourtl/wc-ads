@@ -5,25 +5,31 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
   <title>Stencil Component Starter</title>
-
   <script type="module" src="/build/wc-ads.esm.js"></script>
   <script nomodule src="/build/wc-ads.js"></script>
+  <usn-gpt
+    set-centering="true"
+    enable-single-request="true"
+  ></my-gpt>
+</head> 
 
-  <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
-  <script>
-    window.googletag = window.googletag || { cmd: [] };
+<body>  
+  <usn-ad 
+    ad-id="leaderboard" 
+    ad-unit-path="/6355419/Travel" 
+    size="728x90"
+    targeting='{"test": "infinitescroll"}'
+    size-map="[[[0, 0],[]],[[728, 200], [728, 90]]]"
+  >
+  </usn-ad>
 
-    googletag.cmd.push(() => {
-      googletag.pubads().enableSingleRequest();
-      googletag.pubads().disableInitialLoad();
-      googletag.enableServices();
-    });
-  </script>
-
-</head>
-
-<body>
-  <usn-ad id="leaderboard" ad-unit-path="/6355419/Travel" size="728x90">
+  <usn-ad 
+    ad-id="leaderboard2" 
+    ad-unit-path="/6355419/Travel" 
+    size="728x90"
+    targeting='{"test": "infinitescroll"}'
+    size-map="[[[0, 0],[]],[[728, 200], [728, 90]]]"
+  >
   </usn-ad>
 </body>
 

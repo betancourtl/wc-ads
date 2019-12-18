@@ -10,89 +10,97 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 
 export namespace Components {
-  interface MyComponent {
-    /**
-    * The first name
-    */
-    'first': string;
-    /**
-    * The last name
-    */
-    'last': string;
-    /**
-    * The middle name
-    */
-    'middle': string;
-  }
   interface UsnAd {
     /**
     * The first name
     */
+    'adId': string;
+    /**
+    * The ad unit name
+    */
     'adUnitPath': string;
     /**
-    * The first name
-    */
-    'id': string;
-    /**
-    * The with and height of the ad.
+    * The width and height of the ad.
     */
     'size': string;
+    /**
+    * The sizeMap used for responsive behavior.
+    */
+    'sizeMap': string;
+    /**
+    * The slot targeting.
+    */
+    'targeting': string;
+  }
+  interface UsnGpt {
+    /**
+    * Enables SRA.
+    */
+    'enableSingleRequest': boolean;
+    /**
+    * Centers all the ads.
+    */
+    'setCentering': boolean;
   }
 }
 
 declare global {
 
 
-  interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
-  var HTMLMyComponentElement: {
-    prototype: HTMLMyComponentElement;
-    new (): HTMLMyComponentElement;
-  };
-
   interface HTMLUsnAdElement extends Components.UsnAd, HTMLStencilElement {}
   var HTMLUsnAdElement: {
     prototype: HTMLUsnAdElement;
     new (): HTMLUsnAdElement;
   };
+
+  interface HTMLUsnGptElement extends Components.UsnGpt, HTMLStencilElement {}
+  var HTMLUsnGptElement: {
+    prototype: HTMLUsnGptElement;
+    new (): HTMLUsnGptElement;
+  };
   interface HTMLElementTagNameMap {
-    'my-component': HTMLMyComponentElement;
     'usn-ad': HTMLUsnAdElement;
+    'usn-gpt': HTMLUsnGptElement;
   }
 }
 
 declare namespace LocalJSX {
-  interface MyComponent {
-    /**
-    * The first name
-    */
-    'first'?: string;
-    /**
-    * The last name
-    */
-    'last'?: string;
-    /**
-    * The middle name
-    */
-    'middle'?: string;
-  }
   interface UsnAd {
     /**
     * The first name
     */
+    'adId'?: string;
+    /**
+    * The ad unit name
+    */
     'adUnitPath'?: string;
     /**
-    * The first name
-    */
-    'id'?: string;
-    /**
-    * The with and height of the ad.
+    * The width and height of the ad.
     */
     'size'?: string;
+    /**
+    * The sizeMap used for responsive behavior.
+    */
+    'sizeMap'?: string;
+    /**
+    * The slot targeting.
+    */
+    'targeting'?: string;
+  }
+  interface UsnGpt {
+    /**
+    * Enables SRA.
+    */
+    'enableSingleRequest'?: boolean;
+    /**
+    * Centers all the ads.
+    */
+    'setCentering'?: boolean;
   }
 
   interface IntrinsicElements {
-    'my-component': MyComponent;
     'usn-ad': UsnAd;
+    'usn-gpt': UsnGpt;
   }
 }
 
@@ -102,8 +110,8 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
-      'my-component': LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
       'usn-ad': LocalJSX.UsnAd & JSXBase.HTMLAttributes<HTMLUsnAdElement>;
+      'usn-gpt': LocalJSX.UsnGpt & JSXBase.HTMLAttributes<HTMLUsnGptElement>;
     }
   }
 }
