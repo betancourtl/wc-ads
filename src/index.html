@@ -7,30 +7,31 @@
   <title>Stencil Component Starter</title>
   <script type="module" src="/build/wc-ads.esm.js"></script>
   <script nomodule src="/build/wc-ads.js"></script>
-  <usn-gpt
-    set-centering="true"
-    enable-single-request="true"
-  ></my-gpt>
 </head> 
 
 <body>  
-  <usn-ad 
+    <usn-ad-manager
+    set-centering="true"
+    enable-single-request="true"
+  ></usn-ad-manager>
+
+  <usn-display-ad 
     ad-id="leaderboard" 
     ad-unit-path="/6355419/Travel" 
     size="728x90"
     targeting='{"test": "infinitescroll"}'
     size-map="[[[0, 0],[]],[[728, 200], [728, 90]]]"
   >
-  </usn-ad>
+  </usn-display-ad>
 
-  <usn-ad 
-    ad-id="leaderboard2" 
+  <usn-display-ad 
+    ad-id="leaderboard1" 
     ad-unit-path="/6355419/Travel" 
     size="728x90"
     targeting='{"test": "infinitescroll"}'
     size-map="[[[0, 0],[]],[[728, 200], [728, 90]]]"
   >
-  </usn-ad>
+  </usn-display-ad >
 </body>
 
 </html>

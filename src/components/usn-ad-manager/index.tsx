@@ -2,11 +2,11 @@ import { Component, h, State, Prop } from '@stencil/core';
 declare const window: any;
 
 @Component({
-  tag: 'usn-gpt',
-  styleUrl: 'usn-gpt.css',
+  tag: 'usn-ad-manager',
+  styleUrl: 'styles`.css',
   shadow: false,
 })
-export class GPT {
+export class AdManager {
   /**
    * The GPT slot.
    */
@@ -22,10 +22,13 @@ export class GPT {
    */
   @Prop() enableSingleRequest: boolean = true;
 
+  connectedCallback() {
+    console.log('connected GPT')
+    window.googletag = window.googletag || { cmd: [] };
+  }
+
   componentWillLoad() {
     if (this.loaded === true) return;
-
-    window.googletag = window.googletag || { cmd: [] };
     window.googletag.cmd.push(() => {
       console.log(this.enableSingleRequest);
       console.log(this.setCentering);

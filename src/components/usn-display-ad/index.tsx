@@ -2,8 +2,8 @@ import { Component, Prop, State, h, Host } from '@stencil/core';
 declare const window: any;
 
 @Component({
-  tag: 'usn-ad',
-  styleUrl: 'usn-ad.css',
+  tag: 'usn-display-ad',
+  styleUrl: 'styles.css',
   shadow: false,
 })
 export class Ad {
@@ -61,6 +61,10 @@ export class Ad {
       mq.addListener(this.refresh);
       this.mqListeners.push(() => mq.removeListener(this.refresh));
     });
+  }
+
+  connectedCallback() {
+    console.log('connected Ad');
   }
 
   componentWillLoad() {

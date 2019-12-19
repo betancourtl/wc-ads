@@ -10,7 +10,17 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 
 export namespace Components {
-  interface UsnAd {
+  interface UsnAdManager {
+    /**
+    * Enables SRA.
+    */
+    'enableSingleRequest': boolean;
+    /**
+    * Centers all the ads.
+    */
+    'setCentering': boolean;
+  }
+  interface UsnDisplayAd {
     /**
     * The first name
     */
@@ -32,40 +42,40 @@ export namespace Components {
     */
     'targeting': string;
   }
-  interface UsnGpt {
-    /**
-    * Enables SRA.
-    */
-    'enableSingleRequest': boolean;
-    /**
-    * Centers all the ads.
-    */
-    'setCentering': boolean;
-  }
 }
 
 declare global {
 
 
-  interface HTMLUsnAdElement extends Components.UsnAd, HTMLStencilElement {}
-  var HTMLUsnAdElement: {
-    prototype: HTMLUsnAdElement;
-    new (): HTMLUsnAdElement;
+  interface HTMLUsnAdManagerElement extends Components.UsnAdManager, HTMLStencilElement {}
+  var HTMLUsnAdManagerElement: {
+    prototype: HTMLUsnAdManagerElement;
+    new (): HTMLUsnAdManagerElement;
   };
 
-  interface HTMLUsnGptElement extends Components.UsnGpt, HTMLStencilElement {}
-  var HTMLUsnGptElement: {
-    prototype: HTMLUsnGptElement;
-    new (): HTMLUsnGptElement;
+  interface HTMLUsnDisplayAdElement extends Components.UsnDisplayAd, HTMLStencilElement {}
+  var HTMLUsnDisplayAdElement: {
+    prototype: HTMLUsnDisplayAdElement;
+    new (): HTMLUsnDisplayAdElement;
   };
   interface HTMLElementTagNameMap {
-    'usn-ad': HTMLUsnAdElement;
-    'usn-gpt': HTMLUsnGptElement;
+    'usn-ad-manager': HTMLUsnAdManagerElement;
+    'usn-display-ad': HTMLUsnDisplayAdElement;
   }
 }
 
 declare namespace LocalJSX {
-  interface UsnAd {
+  interface UsnAdManager {
+    /**
+    * Enables SRA.
+    */
+    'enableSingleRequest'?: boolean;
+    /**
+    * Centers all the ads.
+    */
+    'setCentering'?: boolean;
+  }
+  interface UsnDisplayAd {
     /**
     * The first name
     */
@@ -87,20 +97,10 @@ declare namespace LocalJSX {
     */
     'targeting'?: string;
   }
-  interface UsnGpt {
-    /**
-    * Enables SRA.
-    */
-    'enableSingleRequest'?: boolean;
-    /**
-    * Centers all the ads.
-    */
-    'setCentering'?: boolean;
-  }
 
   interface IntrinsicElements {
-    'usn-ad': UsnAd;
-    'usn-gpt': UsnGpt;
+    'usn-ad-manager': UsnAdManager;
+    'usn-display-ad': UsnDisplayAd;
   }
 }
 
@@ -110,8 +110,8 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
-      'usn-ad': LocalJSX.UsnAd & JSXBase.HTMLAttributes<HTMLUsnAdElement>;
-      'usn-gpt': LocalJSX.UsnGpt & JSXBase.HTMLAttributes<HTMLUsnGptElement>;
+      'usn-ad-manager': LocalJSX.UsnAdManager & JSXBase.HTMLAttributes<HTMLUsnAdManagerElement>;
+      'usn-display-ad': LocalJSX.UsnDisplayAd & JSXBase.HTMLAttributes<HTMLUsnDisplayAdElement>;
     }
   }
 }
