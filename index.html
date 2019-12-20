@@ -12,34 +12,33 @@
   <title></title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script type="module" src="./dist/esm/wc-ads.mjs"></script>
-  <script nomodule src="./dist/wc-ads.js"></script>
-  <usn-gpt set-centering="true" enable-single-request="true"></usn-gpt>
+  <script src="./dist/wc-ads.js"></script>
+  <usn-ad-manager
+  set-centering="true"
+  enable-single-request="true"
+></usn-ad-manager>
+
 </head>
 
 <body>
-    <usn-ad 
+  <usn-display-ad 
     ad-id="leaderboard" 
     ad-unit-path="/6355419/Travel" 
     size="728x90"
     targeting='{"test": "infinitescroll"}'
-    size-map="[
-      [[0, 0],[]],
-      [[728, 200], [728, 90]]
-    ]"
+    size-map="[[[0, 0],[]],[[728, 200], [728, 90]]]"
   >
-  </usn-ad>
+  </usn-display-ad>
 
-  <usn-ad 
-    ad-id="leaderboard2" 
+  <usn-display-ad 
+    ad-id="leaderboard1" 
     ad-unit-path="/6355419/Travel" 
     size="728x90"
     targeting='{"test": "infinitescroll"}'
-    size-map="[
-      [[0, 0],[728, 90]]
-    ]"
+    size-map="[[[0, 0],[]],[[728, 200], [728, 90]]]"
   >
-  </usn-ad>
+  </usn-display-ad >
+
 </body>
 
 </html>
