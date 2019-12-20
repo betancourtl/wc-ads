@@ -3,7 +3,7 @@ declare const window: any;
 
 @Component({
   tag: 'usn-ad-manager',
-  styleUrl: 'styles`.css',
+  styleUrl: 'styles.css',
   shadow: false,
 })
 export class AdManager {
